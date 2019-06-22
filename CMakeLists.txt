@@ -44,7 +44,7 @@ install(TARGETS
   bumper_trigger
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY configuration_files launch 
+install(DIRECTORY configuration_files launch urdf include
         DESTINATION share/${PROJECT_NAME})
 
 
