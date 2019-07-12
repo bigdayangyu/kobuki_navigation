@@ -8,7 +8,7 @@
   <link name="base_footprint"/>
 
   <joint name="base_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0.1"/>
     <parent link="base_footprint"/>
     <child link="base_link"/>
   </joint>
@@ -20,7 +20,7 @@
         <!-- new mesh -->
         <mesh filename="package://kobuki_description/meshes/main_body.dae"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0.001 0 0.05199"/>
+      <origin rpy="0 0 0" xyz="0.01 0 0.0"/>
     </visual>
     <collision name="base">
       <geometry>
