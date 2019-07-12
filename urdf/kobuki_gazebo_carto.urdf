@@ -134,9 +134,15 @@
     <axis xyz="0 1 0"/>
     <origin rpy="0 0 0" xyz="0.056 0.062 0.0202"/>
     <parent link="base_link"/>
-    <child link="gyro_link"/>
+    <child link="imu_link"/>
   </joint>
-  <link name="gyro_link">
+
+<!-- 
+  Gazebo libgazebo_ros_imu plugin bug, the name of the gyro_link was changed to 
+  imu_link. https://github.com/googlecartographer/cartographer_ros/issues/278#issuecomment-455141636 
+
+-->
+  <link name="imu_link">
     <inertial>
       <mass value="0.001"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
