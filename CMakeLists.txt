@@ -26,6 +26,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 
+### TODO Add more dependencues for navigation and cartographer
 add_executable(bumper_trigger src/bumper_trigger.cpp)
 ament_target_dependencies(bumper_trigger
   "geometry_msgs"
@@ -44,7 +45,7 @@ install(TARGETS
   bumper_trigger
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY configuration_files launch urdf include
+install(DIRECTORY configuration_files launch urdf include map param
         DESTINATION share/${PROJECT_NAME})
 
 
