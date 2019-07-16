@@ -45,7 +45,7 @@ install(TARGETS
   bumper_trigger
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY configuration_files launch urdf include map param
+install(DIRECTORY configuration_files launch urdf include map param rviz
         DESTINATION share/${PROJECT_NAME})
 
 

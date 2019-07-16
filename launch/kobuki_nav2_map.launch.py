@@ -15,12 +15,13 @@ def generate_launch_description():
     kobuki_navigation_path = get_package_share_directory('kobuki_navigation')
     map_path = LaunchConfiguration('map', 
                                 default=os.path.join(kobuki_navigation_path, 'map', 'map.yaml'))
+    # map_path = os.path.join(kobuki_navigation_path, 'map', 'map.yaml')
     param_path = LaunchConfiguration('params', 
                                 default=os.path.join(kobuki_navigation_path, 'param', 'kobuki_nav.yaml'))
     
     nav2_launch_file_path = os.path.join(get_package_share_directory('nav2_bringup'), 'launch')
 
-    # rviz_config_dir = os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'nav2_default_view.rviz')
+    rviz_config_dir = os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'nav2_default_view.rviz')
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -43,10 +44,28 @@ def generate_launch_description():
             launch_arguments={'map': map_path, 'use_sim_time': use_sim_time, 'params': param_path}.items(),
         ),
 
-        # Node(
-        #     package='rviz2',
-        #     node_executable='rviz2',
-        #     node_name='rviz2',
-        #     arguments=['-d', rviz_config_dir],
-        #     output='screen'),
+        ExecuteProcess(
+            cmd=['ros2', 'param', 'set', '/amcl', 'use_sim_time', use_sim_time],
+            output='screen'),
+
+        ExecuteProcess(
+            cmd=['ros2', 'param', 'set', '/world_model', 'use_sim_time', use_sim_time],
+            output='screen'),
+
+        ExecuteProcess(
+            cmd=['ros2', 'param', 'set', '/global_costmap/global_costmap', 'use_sim_time', use_sim_time],
+            output='screen'),
+
+        ExecuteProcess(
+            cmd=['ros2', 'param', 'set', '/local_costmap/local_costmap', 'use_sim_time', use_sim_time],
+            output='screen'),
+    
+
+
+        Node(
+            package='rviz2',
+            node_executable='rviz2',
+            node_name='rviz2',
+            arguments=['-d', rviz_config_dir],
+            output='screen'),
     ])
