@@ -11,11 +11,10 @@ from launch.actions import ExecuteProcess
 
 
 def generate_launch_description():
-    use_sim_time = LaunchConfiguration('use_sim_time', default='True')
+    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
     kobuki_navigation_path = get_package_share_directory('kobuki_navigation')
     map_path = LaunchConfiguration('map', 
                                 default=os.path.join(kobuki_navigation_path, 'map', 'map.yaml'))
-    # map_path = os.path.join(kobuki_navigation_path, 'map', 'map.yaml')
     param_path = LaunchConfiguration('params', 
                                 default=os.path.join(kobuki_navigation_path, 'param', 'kobuki_nav.yaml'))
     
@@ -60,12 +59,10 @@ def generate_launch_description():
             cmd=['ros2', 'param', 'set', '/local_costmap/local_costmap', 'use_sim_time', use_sim_time],
             output='screen'),
     
-
-
         Node(
             package='rviz2',
             node_executable='rviz2',
-            node_name='rviz2',
+            # node_name='rviz2',
             arguments=['-d', rviz_config_dir],
             output='screen'),
     ])

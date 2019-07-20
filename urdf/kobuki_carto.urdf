@@ -8,7 +8,7 @@
   <link name="base_footprint"/>
 
   <joint name="base_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.01"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0102"/>
     <parent link="base_footprint"/>
     <child link="base_link"/>
   </joint>
@@ -30,7 +30,7 @@
     </collision>
     <inertial>
       <!-- COM experimentally determined -->
-      <origin xyz="0.01 0 0"/>
+      <origin xyz="0 0 0"/>
       <mass value="2.4"/>
       <!-- 2.4/2.6 kg for small/big battery pack -->
       <!-- Kobuki's inertia tensor is approximated by a cylinder with homogeneous mass distribution
