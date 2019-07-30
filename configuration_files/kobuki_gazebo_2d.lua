@@ -19,7 +19,7 @@ options = {
   map_builder = MAP_BUILDER,
   trajectory_builder = TRAJECTORY_BUILDER,
   map_frame = "map",
-  tracking_frame = "gyro_link",
+  tracking_frame = "imu_link",-- use "imu_link" for gazebo demo, "gyro_link" for kobuki robot
   published_frame = "odom",
   odom_frame = "odom",
   provide_odom_frame = false,
@@ -41,7 +41,7 @@ options = {
   --added keys diff from turtlebot_demo
   use_nav_sat = false,
   use_landmarks = false,
-  publish_frame_projected_to_2d = false, 
+  publish_frame_projected_to_2d = true, 
   fixed_frame_pose_sampling_ratio = 1, 
   landmarks_sampling_ratio = 1,
 }
@@ -54,10 +54,10 @@ TRAJECTORY_BUILDER_2D.missing_data_ray_length = 2.0
 TRAJECTORY_BUILDER_2D.use_imu_data = true
 TRAJECTORY_BUILDER_2D.motion_filter.max_time_seconds = 0.3
 TRAJECTORY_BUILDER_2D.motion_filter.max_distance_meters = 0.2
-TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians = math.rad(3.)
+TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians = math.rad(0.1)
 TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 70
 TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 300
-
+TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true 
 -- TRAJECTORY_BUILDER_2D.submaps.resolution = 0.035
 TRAJECTORY_BUILDER_2D.submaps.num_range_data = 120
 POSE_GRAPH.optimize_every_n_nodes = 120

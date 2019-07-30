@@ -5,12 +5,11 @@ import launch
 import launch.action
 import launch_ros.actions
 
-
 from launch.substitutions import LaunchConfiguration
 def generate_launch_description():
     kobuki_navigation_path = get_package_share_directory('kobuki_navigation')
-    cartographer_config_dir = os.path.join(kobuki_navigation_path, 'configuration_files')
-    urg_node_prefix = get_package_share_directory('urg_node')
+    cartographer_config_path = os.path.join(kobuki_navigation_path, 'configuration_files')
+    urg_node_path = get_package_share_directory('urg_node')
     rviz_config = os.path.join(kobuki_navigation_path, 'rviz', 'kobuki_carto_demo.rviz')
 
     kobuki_urdf = os.path.join(kobuki_navigation_path,'urdf', 'kobuki_carto.urdf')
@@ -27,7 +26,7 @@ def generate_launch_description():
             package="urg_node",
             node_executable="urg_node",
             output="screen",
-            arguments=["__params:="+ urg_node_prefix+ "/launch/urg_node.yaml"],
+            arguments=["__params:="+ urg_node_path+ "/launch/urg_node.yaml"],
             on_exit=launch.actions.Shutdown()),
                 
         launch_ros.actions.Node(
@@ -57,7 +56,7 @@ def generate_launch_description():
             package="cartographer_ros",
             node_executable="cartographer_node",
             output="screen",
-            arguments=["-configuration_directory" , cartographer_config_dir ,
+            arguments=["-configuration_directory" , cartographer_config_path ,
             "-configuration_basename", "kobuki_2d.lua"],            
             on_exit=launch.actions.Shutdown()),
 
