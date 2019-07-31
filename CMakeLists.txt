@@ -15,8 +15,13 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+# uncomment the following section in order to fill in
+# further dependencies manually.
+# find_package(<dependency> REQUIRED)
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(cartographer REQUIRED)
+find_package(cartographer_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(kobuki_driver REQUIRED)
 find_package(kobuki_msgs REQUIRED)
@@ -25,6 +30,7 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(urg_node REQUIRED)
 
 ### TODO Add more dependencues for navigation and cartographer
 add_executable(bumper_trigger src/bumper_trigger.cpp)
@@ -37,9 +43,7 @@ ament_target_dependencies(bumper_trigger
   "sensor_msgs"
   "tf2"
   "tf2_ros")
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+
 
 install(TARGETS
   bumper_trigger

@@ -1,11 +1,10 @@
 import os
-
 from ament_index_python.packages import get_package_share_directory
 import launch
 import launch.action
 import launch_ros.actions
-
 from launch.substitutions import LaunchConfiguration
+
 def generate_launch_description():
     kobuki_navigation_path = get_package_share_directory('kobuki_navigation')
     cartographer_config_path = os.path.join(kobuki_navigation_path, 'configuration_files')
