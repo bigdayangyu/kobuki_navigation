@@ -1,0 +1,57 @@
+repositories:
+  cartographer_ros:
+    type: git
+    url: https://github.com/bigdayangyu/cartographer_ros.git
+    version: dashing
+  kobuki_gazebo_demo:
+    type: git
+    url: https://github.com/bigdayangyu/kobuki_gazebo_demo.git
+    version: master
+  kobuki_navigation:
+    type: git
+    url: https://github.com/bigdayangyu/kobuki_navigation.git
+    version: master
+  ros-drivers/urg_c:
+    type: git
+    url: https://github.com/MarcTestier/urg_c
+    version: ros2-devel
+  ros-drivers/urg_node:
+    type: git
+    url: https://github.com/bosch-robotics-na/urg_node.git
+    version: ros2-devel
+  ros-drivers/urg_node_msgs:
+    type: git
+    url: https://github.com/ros-drivers/urg_node_msgs
+    version: master
+  ros-perception/laser_proc:
+    type: git
+    url: https://github.com/bosch-robotics-na/laser_proc
+    version: ros2-devel
+  ros/diagnostics:
+    type: git
+    url: https://github.com/ros/diagnostics.git
+    version: ros2-devel
+  stonier/ecl_core:
+    type: git
+    url: https://github.com/bosch-robotics-na/ecl_core.git
+    version: fix_include_directories
+  stonier/ecl_lite:
+    type: git
+    url: https://github.com/bosch-robotics-na/ecl_lite.git
+    version: fix_include_directories
+  stonier/ecl_tools:
+    type: git
+    url: https://github.com/stonier/ecl_tools.git
+    version: devel
+  yujinrobot/kobuki:
+    type: git
+    url: https://github.com/yujinrobot/kobuki.git
+    version: ros2
+  yujinrobot/kobuki_core:
+    type: git
+    url: https://github.com/bosch-robotics-na/kobuki_core.git
+    version: fix_ros2
+  yujinrobot/kobuki_msgs:
+    type: git
+    url: https://github.com/bosch-robotics-na/kobuki_msgs.git
+    version: fix_ros2
