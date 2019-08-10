@@ -1,4 +1,10 @@
 # kobuki ROS 2 demo 
+## Install Dependencie
+
+```bash
+git clone https://github.com/bigdayangyu/kobuki_navigation.git
+vcs import src <kobuki_demo.repos
+```
 ## kobuki Robot
 ### kobuki bring up 
 * Launch the kobuki robot by exicuting the `kobuki_node.cpp`
