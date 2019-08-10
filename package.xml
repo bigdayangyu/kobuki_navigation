@@ -9,17 +9,15 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <!-- <exec_depend>ament_index_python</exec_depend> -->
-
-<!--   <exec_depend>cartographer_ros</exec_depend> -->
-
-  <exec_depend>urg_node</exec_depend>
-  <exec_depend>launch</exec_depend>
-  <exec_depend>ros2run</exec_depend>
+  <!--<exec_depend>cartographer_ros</exec_depend>-->
   <depend>kobuki_msgs</depend>
-  <exec_depend>teleop_twist_keyboard</exec_depend>
-  <exec_depend>tf2_ros</exec_depend>
-  <exec_depend>turtlebot2_drivers</exec_depend>
+
+  <depend>urg_node</depend>
+  <depend>launch</depend>
+  <depend>ros2run</depend>
+  <depend>teleop_twist_keyboard</depend>
+  <depend>tf2_ros</depend>
+  <depend>turtlebot2_drivers</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

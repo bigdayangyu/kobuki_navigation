@@ -20,8 +20,6 @@ endif()
 # find_package(<dependency> REQUIRED)
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(cartographer REQUIRED)
-find_package(cartographer_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(kobuki_driver REQUIRED)
 find_package(kobuki_msgs REQUIRED)
@@ -29,7 +27,7 @@ find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
-find_package(tf2_ros REQUIRED)
+#find_package(tf2_ros REQUIRED)
 find_package(urg_node REQUIRED)
 
 ### TODO Add more dependencues for navigation and cartographer
@@ -42,14 +40,15 @@ ament_target_dependencies(bumper_trigger
   "rclcpp"
   "sensor_msgs"
   "tf2"
-  "tf2_ros")
 
+  )
 
+  #"tf2_ros"
 install(TARGETS
   bumper_trigger
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY configuration_files launch urdf include map param rviz
+install(DIRECTORY configuration_files launch urdf map param rviz
         DESTINATION share/${PROJECT_NAME})
 
 
